@@ -1,0 +1,846 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #eee;
+  padding: 0 16px;
+  text-align: center;
+}
+
+header {
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  color: #ccc;
+  width: 100vw;
+}
+
+header h1 {
+  color: #ff4747;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+}
+
+footer {
+  position: absolute;
+  text-align: center;
+  width: 98vw;
+  height: 10rem;
+  background-color: #727572;
+  background-image: url('https://t4.ftcdn.net/jpg/05/00/76/75/360_F_500767502_AdezwSUsyb04l79RpV6zubKulRnIHpd0.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+footer p {
+  color: #ffffff;
+}
+
+.footer h6{
+  color: #ffffff;
+}
+
+
+.ButtonBase-root {
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  display: inline-flex;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  border-radius: 0;
+  vertical-align: middle;
+  -moz-appearance: none;
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.ButtonBase-root::-moz-focus-inner {
+  border-style: none;
+}
+@media print {
+  .ButtonBase-root {
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+.bottom-space {
+  margin-top: -7vh;
+  margin-bottom: 1vh;
+}
+
+.Button-root {
+  color: rgba(0, 0, 0, 0.87);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+}
+.Button-root:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+@media (hover: none) {
+  .Button-root:hover {
+    background-color: transparent;
+  }
+}
+.Button-label {
+  width: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+}
+.Button-text {
+  padding: 6px 8px;
+}
+
+.Typography-root {
+  margin: 0;
+}
+.Typography-h3 {
+  font-size: 3rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.167;
+  letter-spacing: 0em;
+}
+
+.Typography-gutterBottom {
+  margin-bottom: 0.35em;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),url('https://images.squarespace-cdn.com/content/v1/5c81819afb22a523a06e42de/1559774963533-XJ6G26G6XXUJ6ZMWAFLZ/48_Sutlej_canyon_nanda_devi_square.jpg?format=1500w');
+  background-size: cover;
+  background-position: center;
+  position:relative;
+}
+
+
+
+.header-text {
+  flex: 1;
+  align-self: flex-start;
+  color: #FF0000;
+  font-size: 5rem;
+}
+
+.header-links {
+  display: flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+header h5{
+  font-size: 3.5rem;
+}
+
+header h2{
+  font-size: 15px;
+  color: #ffffff;
+}
+
+
+.social-media-icons{
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+}
+
+.icon-link {
+  color: inherit; /* Use the color of the parent element */
+  text-decoration: none; /* Remove underline */
+}
+
+.social-media-icons a {
+  filter: brightness(0.9); /* Adjust the value to make the icons darker */
+}
+
+
+.tab{
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.tab-heading {
+  color: rgb(255, 255, 255);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.0);
+  padding-left: 5%;
+  padding-top: 3%;
+  font-weight: bolder;
+}
+
+.tab-btn{
+  font-weight: bolder;
+  padding: 15%;
+  margin: 15px;
+}
+
+.tab-content{
+  color: rgb(255, 255, 255);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  padding: 10%;
+  font-size: 20px;
+  
+background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  /*box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+ /* background-color: #ffffff;
+  background-image: url("/home/rohon/Desktop/mytravelapp/public/moroccan-flower.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+.home-content{
+  padding-top: 5px;
+  padding-top: 5px;
+  margin: 7px;
+  transition: transform 0.3s ease;
+}
+
+.home-content:hover{
+  transform: scale(1.01);
+}
+
+.Small-tab {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #1a0303;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(250, 247, 247, 0.1);
+  transition: all 0.3s ease;
+  margin-top:1px;
+  height: 55vh;
+  font-size: 20px;
+}
+
+.Small-tab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.background-img-small-Tab {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 10px;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 0 70px rgba(0, 0, 0, 0.8);
+}
+
+.Smalltab-heading{
+  transform: skew(-14deg);
+  font-size: 20px;
+  padding-left: 25%;
+  padding-right: 0%;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.Smalltab-heading:hover{
+  text-decoration: underline;
+  transition: text-decoration 1.0s linear;
+  color: white;
+}
+
+.Smalltab-button{
+  right: 0;
+  margin-right: 10px;
+  box-shadow: 0 0 5px rgb(246, 250, 3);
+  font-size: 25px;
+}
+
+.list{
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 2px;
+  margin-bottom: 5px;
+  text-align: center;
+  transform: skew(-14deg);
+  box-shadow: 0 0 150px rgba(0, 0, 0, 0.8);
+}
+
+
+.travel-icons{
+  margin-top: 14px;
+  font-size: 20px;
+}
+
+.icon{
+  margin: 5%;
+  font-size:25px;
+}
+
+.icon-text{
+  font-size: 10px;
+}
+
+.Small-tab-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+
+@media (min-width: 768px) {
+  .Small-tab {
+    flex-basis: calc(50% - 10px); /* Display two SmallTabs in a row with some spacing */
+    margin-bottom: 20px;
+  }
+}
+
+.details{
+  position: relative; /* Ensure the parent div is positioned */
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Arrange child elements vertically */
+  align-items: flex-start; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+  text-align: left;
+  border-radius: 5px;
+  background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.details input{
+  margin:5px ;
+  height: 35px;
+}
+
+textarea{
+  margin-left:5px ;
+  border-radius: 7px;
+  margin-bottom: 5px;
+}
+
+.btn-danger{
+  margin: 2px;
+}
+
+.booking{
+  text-align: center;
+}
+
+.package-name{
+  margin: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+}
+
+.booking-row{
+  padding-left: 12px;
+}
+
+.payment-methods{
+  margin-top: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+  border-radius: 5px;
+  text-align: left;
+  height: 60vh;
+  background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.payment-methods h3{
+  color: blue;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.form-check{
+  margin-left: 15px;
+}
+
+
+.rules{
+  background-color: #727572;
+  margin-top: 25px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+  border-radius: 5px;
+  color: aliceblue;
+}
+
+.rules p{
+  padding: 1%;
+}
+
+.btn-info{
+  margin: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+  align-self: center;
+}
+
+h5{
+  margin-left: 2px;
+  margin-top: 15px;
+}
+
+.btn-success{
+  position: absolute;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+  align-self: center;
+  bottom: 0;
+  margin-top: 5px;
+}
+
+
+.person-icon{
+  margin-top: 50px;
+  padding-top: 8px;
+}
+
+.contact-icon{
+  margin-left: 7px;
+  padding-top: 14px;
+}
+
+.section{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+  height:60vh;
+  background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+  text-align: center;
+}
+
+.section-heading{
+  color: #0000FF;
+}
+
+.payment-description{
+  color:darkslategray;
+  padding: 5px;
+  margin-top: 12px;
+}
+
+.icon-large {
+  font-size: 3em; /* Adjust the font size as per your preference */
+  margin: 15px;
+}
+
+.activities{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.contact-popup{
+  border-radius: 10px;
+  background-color: #c9c9c9;
+  background-image: url("https://www.transparenttextures.com/patterns/escheresque-dark.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  text-align: center;
+}
+
+.contact-popup h3,p{
+  color: #eee;
+}
+
+.popup-text{
+  margin: 2px; 
+}
+
+.close-button{
+  border: black;
+  border-radius: 50%;
+}
+
+
+
+@media (min-width: 768px) {
+  .section{
+    height:100vh
+  }
+
+  .payment-methods{
+    height: 100vh;
+  }
+
+  .icon-large {
+    font-size: 5em; /* Adjust the font size as per your preference */
+  }
+}
+
+.carousel-item{
+  margin: 2px;
+  height: 35vh;
+  width: 100vw;
+}
+
+#carouselExampleIndicators{
+  margin-bottom: 10px;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  color: white;
+  text-align: center;
+}
+
+
+.user-container{
+  border: 2px solid white;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  margin-left: 4px;
+  margin-bottom: 15px;
+}
+
+.user-dropdown-menu {
+  background-color: #9dcbdd;
+  height: 50vh;
+}
+
+.user-dropdown-menu .user-list-item {
+  margin: 5px;
+  border: #1a0303;
+  width: 200px;
+}
+
+.user-dropdown-menu .user-list-item:hover {
+  background-color: #e5e5e5;
+  cursor: pointer;
+}
+
+.user-container {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.user {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 5px;
+}
+
+
+.my-account{
+  border: 2px solid blue;
+  color: #0000FF;
+}
+.registration-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.profile-picture-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-picture-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid rgb(70, 136, 141);
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-picture-icon {
+  font-size: 60px;
+  color: rgb(70, 136, 141);
+}
+
+.registration-page{
+  text-align: center;
+  border: #1a0303;
+  background: linear-gradient(to bottom, #ffffff, #cfcbcb);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+}
+
+.register-item{
+  text-align: left;
+  margin-top: 2px;
+  color: #3a4b83;
+  margin-bottom: 2px;
+}
+
+.register-button{
+  margin-top: 5px;
+}
+
+.registration-terms{
+  font-size: 12px;
+  text-align: left;
+  margin-top: 2px;
+
+}
+
+.registration-checkbox{
+  font-size: 15px;
+}
+
+.registration-title{
+  color: #9dcbdd;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+  margin-bottom: 15px;
+}
+
+.register-text{
+  color: #eee;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.account{
+  height: 45vh;
+  text-align: center;
+  background-color: #ffffff;
+  /*background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");*/
+}
+
+
+
+.username{
+  color: red;
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+
+.wishlisted-tems{
+  text-align: center;
+}
+
+.wishlist-heading{
+  color: red;
+}
+
+.datepicker Datepicker{
+  padding: 0px;
+  margin: 0px;
+}
+
+.bookedTab{
+  background-color: #222020;
+  background-image: url("https://www.transparenttextures.com/patterns/diagonal-striped-brick.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+margin: 7px;
+border: 3px solid black;
+border-radius: 5px;
+box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.3);
+font-size: 15px;
+font-weight: bolder;
+text-align: center;
+font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.bookedTab p,h6{
+  color: rgb(252, 252, 252);
+}
+
+.bookedTab h6{
+  font-weight: bolder;
+  background-color: #f8f8f8;
+  margin-left: 95px;
+  margin-right: 95px;  /* Reset the default margin Smalltab*/
+  border-radius: 5px;
+}
+
+.booked-heading{
+  box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.3);
+  font-weight: bolder;
+}
+
+.bookedTab h5{
+  font-weight: bolder;
+  color: white;
+}
+
+.bookings-page{
+  text-align: center;
+}
+
+.bookings-heading{
+  color: #476844;
+}
+
+.payment{
+  background-color: #f7f7f7;
+background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+color: #1a0303;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 5px solid black;
+}
+
+.payment p{
+  color: #1a0303;
+  margin-left: 15px;
+}
+
+.payment h6,h5{
+  margin-left: 15px;
+}
+
+.payment h6{
+  font-weight:bold ;
+}
+
+.payment-history li{
+  padding: 0;
+}
+
+.payment-history p{
+  margin-bottom: 0;
+}
+
+.payment-history{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+  margin:1px;
+}
+
+.notification-popup{
+  border-radius: 10px;
+  background-color: #c9c9c9;
+  background-image: url("https://www.transparenttextures.com/patterns/escheresque-dark.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  text-align: center;
+}
+
+
+.bookeditem-profile-picture{
+  margin: 2px;
+  border: 2px solid white;
+}
+
+.blogtab{
+  margin-top: 10px;
+}
+
+.blogtab p{
+  color: #1a0303;
+}
+
+.card-body{
+  padding:2px;
+  background-color: #ffffff;
+  font-family:Georgia, 'Times New Roman', Times, serif ;
+  font-weight: bold;
+  background-color: #ffffff;
+background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.rating,.smalltab-rating{
+  color:#fcfc39
+}
+
+
+.blog-section {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.blog-section-inner {
+  display: inline-flex;
+}
+
+.card-text {
+  max-height: 200px; /* Adjust the maximum height as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.sidetab{
+  text-align: center;
+  background-image:url("//www.transparenttextures.com/patterns/elegant-grid.png");
+  margin: 5px;
+  border: 2px solid burlywood;
+}
+
+.sidetab p{
+  color:black;
+}
+
+.super-heading{
+  margin-top: 5px;
+  text-align: center;
+  color: #ff0000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
