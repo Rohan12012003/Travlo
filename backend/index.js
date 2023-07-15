@@ -3,6 +3,9 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
+
+mongoose.set('strictQuery',false);
+
 const cors = require('cors');
 const multer = require('multer');
 app.use(express.json());
@@ -234,7 +237,7 @@ mongoose.connect(process.env.MONGO_URI, {
     console.error('Error connecting to the database:', error);
   });
 
-const port = 5000;
+const port = 5000||process.env.PORT;
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
 });
