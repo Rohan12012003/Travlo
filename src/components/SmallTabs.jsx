@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faHotel, faPlane, faCar, faRandom } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faHotel, faPlane, faCar } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Rating from "react-rating";
@@ -10,7 +10,7 @@ function SmallTab(props) {
   const transparentBackground = 'https://www.transparenttextures.com/patterns/shattered-dark.png';
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-  const [backgroundColor, setBackgroundColor] = useState('');
+ // const [backgroundColor, setBackgroundColor] = useState('');
   const navigate = useNavigate();
   const data = {
     tabHeading: props.tabHeading,
@@ -66,7 +66,7 @@ function SmallTab(props) {
 
   useEffect(() => {
     const color = generateRandomColor();
-    setBackgroundColor(color);
+   // setBackgroundColor(color);
   }, []);
 
   const generateRandomColor = () => {
@@ -78,7 +78,7 @@ function SmallTab(props) {
   };
 
   const randomColor = generateRandomColor();
-  backgroundColor=randomColor;
+  //backgroundColor=randomColor;
 
   function getRandomNumber() {
     return Math.floor(Math.random() *(5-3)) + 3;
