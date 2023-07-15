@@ -45,7 +45,6 @@ function LogoutPopup(props) {
       >
         {(close) => (
           <div className="notification-popup">
-            <h6></h6>
             <div className="row d-flex">
               <div className="col-6">
                 <button

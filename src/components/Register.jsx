@@ -97,7 +97,7 @@ function RegistrationPage(props) {
             {userDetails.profilePicture ? (
               <img
                 src={URL.createObjectURL(userDetails.profilePicture)}
-                alt="Profile Picture"
+                alt="ProfilePicture"
                 className="profile-picture"
               />
             ) : (

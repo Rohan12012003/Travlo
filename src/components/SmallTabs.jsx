@@ -65,7 +65,7 @@ function SmallTab(props) {
   };
 
   useEffect(() => {
-    const color = generateRandomColor();
+    //const color = generateRandomColor();
    // setBackgroundColor(color);
   }, []);
 
