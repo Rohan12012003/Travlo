@@ -21,7 +21,7 @@ function Header(props) {
         <div className="header-links col-6">
           <button className="ButtonBase-root Button-root Button-text header-navButtons-3">
             <Link to="/" style={{ textDecoration: "none" }}>
-              <h2>Explore</h2>
+              <h2 className="header-link-text">Explore</h2>
             </Link>
           </button>
           <button className="ButtonBase-root Button-root Button-text header-navButtons-3">
@@ -42,23 +42,23 @@ function Header(props) {
               <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                 <Link to="/MyAccount">
                   <li className="user-list-item my-account">
-                    <FontAwesomeIcon icon={faUser} /> My Account
+                    <p className='user-dropdown-items'><FontAwesomeIcon icon={faUser} /> My Account</p>
                   </li>
                 </Link>
                 <div className="dropdown-divider"></div>
                 <Link to="/Bookings">
                   <li className="user-list-item">
-                    <FontAwesomeIcon icon={faCalendar} /> Bookings
+                    <p className='user-dropdown-items'><FontAwesomeIcon icon={faCalendar} /> Bookings</p>
                   </li>
                 </Link>
                 <Link to="/WishList">
                   <li className="user-list-item">
-                    <FontAwesomeIcon icon={faHeart} /> Wishlist
+                    <p className='user-dropdown-items'><FontAwesomeIcon icon={faHeart} /> Wishlist</p>
                   </li>
                 </Link>
                 <Link to="/PaymentMethods">
                 <li className="user-list-item">
-                  <FontAwesomeIcon icon={faCreditCard} /> Payment History
+                  <p className='user-dropdown-items'><FontAwesomeIcon icon={faCreditCard} /> Payment History</p>
                 </li>
                 </Link>
                 <li>
@@ -74,7 +74,7 @@ function Header(props) {
               </ul>
             </div>
           ) : (
-            <Link className="register-text" to="/Register">
+            <Link className="register-text header-link-text" to="/Register">
               Login
             </Link>
           )}

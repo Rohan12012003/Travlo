@@ -3,7 +3,7 @@ import Rating from "react-rating";
 
 function BlogTab(props) {
   return (
-    <div className="blogtab col-4 col-lg-3">
+    <div className="blogtab col-lg-3 col-sm-2">
       <div className="card">
         <img
           className="card-img-top"

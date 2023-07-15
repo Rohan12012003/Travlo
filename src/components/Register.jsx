@@ -171,7 +171,7 @@ function RegistrationPage(props) {
         </div>
         <button 
         type="submit" 
-        className='register-button btn btn-info'
+        className='register-button btn btn-info btn-sm'
         >
         Register
         </button>

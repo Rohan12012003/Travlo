@@ -844,3 +844,257 @@ background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
 background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
+@media (max-width: 550px) {
+  /* CSS styles for mobile devices */
+
+  .Small-tab {
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    border: 1px solid #1a0303;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(250, 247, 247, 0.1);
+    transition: all 0.3s ease;
+    margin-top: 10px; /* Adjust the margin-top value as needed */
+    height: auto; /* Adjust the height as needed */
+    font-size: 2px; /* Adjust the font-size as needed */
+  }
+
+  .background-img-small-Tab {
+    display: flex;
+    background-size: cover;
+    background-position: 25% center; /* Center the image horizontally */
+    overflow: hidden;  
+    object-fit: cover; /* Adjust the object-fit property */
+    border-radius: 5px;
+    box-shadow: 0 0 70px rgba(0, 0, 0, 0.8);
+    transform: skew(0deg);
+    margin: 0px;
+    height: 40vh;
+  }
+
+  .Smalltab-heading{
+    font-size: small;
+    background-image:none;
+  }
+
+  .list{
+    font-size: 10px;
+    padding-left: 1px;
+    
+  }
+
+  .Smalltab-button{
+    font-size: smaller;
+    padding: 0px;
+    padding-left:20px;
+    transform: skew(0deg);
+  }
+  
+  .book-button-text{
+    font-size: 11px;
+    padding: 0px;
+    transform: skew(0deg);
+    margin:0;
+  }
+
+  .icon{
+    font-size: small;
+    padding-right: 30px;
+  }
+
+  .smalltab-rating{
+    font-size: 10px;
+  }
+
+  .header-logo-text{
+    font-size: 35px;
+  }
+
+  .header-link-text{
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 5px;
+    margin-left: 15px;
+  }
+
+  .user{
+    font-size: 15px;
+    margin-left: 15px;
+  }
+
+  .footer p{
+    font-size: 10px;
+  }
+
+  .footer h6{
+    font-size: 15px;
+  }
+
+  .tab-heading{
+    font-size: medium;
+  }
+
+  .tab-content{
+    font-size: small;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .tab-btn-text{
+    font-size: smaller;
+    padding: 0px;
+  }
+
+  .card-body p{
+    font-size: 8px;
+  }
+
+  .blogtab{
+    width: 500px;
+  }
+
+  .carousel-caption h5{
+    font-size: 15px;
+  }
+
+  .bookedTab p{
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 2px;
+  }
+
+  .bookedTab h5{
+    font-size:15px;
+  }
+
+  .bookedTab h6{
+    font-size:15px;
+    padding: 0;
+    margin: 25;
+  }
+
+  .bookeditem-profile-picture{
+    height: 10vh;
+  }
+
+
+  .payment p{
+    font-size: 14px;
+  }
+
+  .payment-item h5{
+    font-size: 15px;
+  }
+
+  .contact-popup{
+    font-size: 12px;
+  }
+
+  .contact-popup h5{
+    font-size: 18px;
+  }
+
+  .super-heading{
+    font-size: 20px;
+  }
+
+  .user-dropdown-menu li{
+    font-size: 12px;
+  }
+
+  .dropdown-toggle{
+    font-size: 12px;
+  }
+
+  .user-dropdown-items{
+    font-size: 12px;
+    color: #072af1;
+    padding: 0px;
+    margin: 2px;
+  }
+
+  .notification-popup h6{
+    font-size: 15px;
+    margin: 1px;
+  }
+
+  .notification-popup p{
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .account h5 {
+    font-size: 20px;
+  }
+
+  .account h2 {
+    font-size: 20px;
+  }
+
+  .account p{
+    font-size: 12px;
+    margin: 0;
+    margin-left: 1px;
+  }
+
+  .details h5{
+    font-size: 15px;
+  }
+
+  .details p{
+    font-size: 12px;
+  }
+
+  .booking-row{
+    padding: 0;
+    margin: 0;
+  }
+
+  .payment-methods{
+    height:65vh;
+  }
+
+  .payment-methods h3{
+    font-size: 15px;
+  }
+
+  .payment-methods label{
+    font-size:13px
+  }
+
+  .payment-methods p{
+    font-size: 12px;
+  }
+
+
+  .section-heading{
+    font-size: 20px;
+  }
+
+  .activities{
+    font-size: 12px;
+    margin: 0px;
+  }
+
+  .rules p{
+    font-size: 12px;
+  }
+
+  .registration-title{
+    font-size: 15px;
+  }
+
+  .register-item{
+    font-size: 12px;
+  }
+
+  .registration-checkbox{
+    font-size: 12px;
+  }
+}
+

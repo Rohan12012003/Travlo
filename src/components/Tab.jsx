@@ -60,7 +60,7 @@ function Tab(props) {
        {(<Link to={"/"+props.id}>
       <button
         type="button"
-        className="btn btn-info btn-lg tab-btn"
+        className="btn btn-info btn-lg btn-sm tab-btn"
         onMouseEnter={handleButtonHover}
         onMouseLeave={handleButtonHover}
         onClick={handleWatchMore}

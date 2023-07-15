@@ -34,7 +34,7 @@ function LogoutPopup(props) {
     <div>
       <Popup
         trigger={
-          <p style={{ color: 'blue', cursor: 'pointer' }}>
+          <p style={{ color: 'blue', cursor: 'pointer' }} className='user-dropdown-items'>
             <FontAwesomeIcon icon={faSignOutAlt} /> Log Out
           </p>
         }
@@ -48,18 +48,18 @@ function LogoutPopup(props) {
             <div className="row d-flex">
               <div className="col-6">
                 <button
-                  className="btn btn-primary w-100"
+                  className="btn btn-primary btn-sm w-100"
                   onClick={(event) => handleLogout(event, 'Confirm')}
                 >
-                  Confirm
+                  <p>Confirm</p>
                 </button>
               </div>
               <div className="col-6 text-end">
                 <button
-                  className="btn btn-danger w-100"
+                  className="btn btn-danger w-100 btn-sm"
                   onClick={(event) => handleClick(event, 'Cancel')}
                 >
-                  Cancel
+                  <p>Cancel</p>
                 </button>
               </div>
             </div>

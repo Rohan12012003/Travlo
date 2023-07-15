@@ -35,18 +35,18 @@ function MyAccount() {
           )}
           <div className="col-12">
             <Link to="/Register">
-              <button className="btn btn-warning col-12">Edit Profile</button>
+              <button className="btn btn-warning col-12"><p>Edit Profile</p></button>
             </Link>
             <Link to={{ pathname: '/WishList', state: { wishlist: userData.wishlist } }}>
-              <button className="btn btn-danger col-12">Your WishList</button>
+              <button className="btn btn-danger col-12"><p>Your WishList</p></button>
             </Link>
             <Link to="/Bookings">
-              <button className="btn btn-dark col-12 account-booking">Your Bookings</button>
+              <button className="btn btn-dark col-12 account-booking"><p>Your Bookings</p></button>
             </Link>
           </div>
         </div>
       ) : (
-        <p>Loading user data...</p>
+        <p style={{fontSize:'12px'}}>Loading user data...</p>
       )}
     </div>
   );

@@ -172,7 +172,7 @@ function SmallTab(props) {
         }}
         onClick={handleBooking}
       >
-        Book Now
+        <p className='book-button-text'>Book</p>
       </button>
       <div className='justforfun'></div>
     </div>

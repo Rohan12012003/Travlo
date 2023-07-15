@@ -42,7 +42,7 @@ function BookedTab(props) {
         </div>
         <div className="passenger booked-item">
 
-          <h6 className=" d-flex justify-content-center">Passenger 1</h6>
+          <h6 className=" d-flex justify-content-center">Passenger 2</h6>
           <div className="row">
           <p className="col-6">Name: {props.name2}</p>
           <p className="col-6">Age: {props.age2}</p>

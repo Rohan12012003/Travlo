@@ -35,7 +35,7 @@ export default function ContactsPopup() {
 
   return (
     <Popup
-      trigger={<h2>Contact</h2>}
+      trigger={<h2 className='header-link-text'>Contact</h2>}
       position="bottom center"
       arrow={true}
       modal
@@ -86,7 +86,7 @@ export default function ContactsPopup() {
                 value={data.query}
                 onChange={handleChange}
               ></textarea>
-              <button className="btn btn-info" type="submit">Send Message</button>
+              <button className="btn btn-info btn-sm" type="submit">Send Message</button>
             </form>
           </div>
         </div>
