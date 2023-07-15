@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faHotel, faPlane, faCar } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faHotel, faPlane, faCar, faRandom } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Rating from "react-rating";
@@ -78,6 +78,7 @@ function SmallTab(props) {
   };
 
   const randomColor = generateRandomColor();
+  backgroundColor=randomColor;
 
   function getRandomNumber() {
     return Math.floor(Math.random() *(5-3)) + 3;

@@ -26,7 +26,7 @@ function Tab(props) {
   };
 
 
-  const DynamicComponent = props.id ? require(`./${props.id}`).default : null;
+  //const DynamicComponent = props.id ? require(`./${props.id}`).default : null;
 
   return (
     <div className="tab">
