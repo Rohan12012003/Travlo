@@ -11,7 +11,6 @@ import Register from './Register';
 import MyAccount from './MyAccount';
 import WishList from './Wishlist';
 import Bookings from './Bookings';
-import BookedTab from './BookedTab';
 import PaymentMethods from './PaymentMethods';
 import Mountain from "./Mountain";
 import Culture from "./Culture";

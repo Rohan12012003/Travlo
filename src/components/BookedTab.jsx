@@ -1,16 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faTrash,
-  faSave,
-  faMoneyBill,
-  faWalking,
-  faEnvelope,
-  faPhoneAlt,
   faHotel,
   faPlane,
   faCar,
-  faCalendarAlt,
 } from "@fortawesome/free-solid-svg-icons";
 function BookedTab(props) {
 
