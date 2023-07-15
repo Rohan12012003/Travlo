@@ -57,7 +57,7 @@ function RegistrationPage(props) {
     //formData.append('profilePicture', userDetails.profilePicture);
 
     // Make the POST request to the server
-    axios.post('https://travlowebsite.netlify.app/.netlify/functions/index/register', formData)
+    axios.post('http://localhost:5000/Register', formData)
       .then(response => {
         // Handle the response from the server
         console.log(response.data); // Example: Log the response data
