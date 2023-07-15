@@ -1,8 +1,7 @@
-import React, { useEffect, useState ,useNavigate} from 'react';
+import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import WildLife from "./WildLife";
 import {Link} from "react-router-dom";
 
 

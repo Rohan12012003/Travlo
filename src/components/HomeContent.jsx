@@ -1,11 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Tab from "./Tab";
-import BlogTab from "./BlogTab";
 import BlogSection from "./BlogSection";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import SideTab from "./SideTab";
+
 function HomeContent(props) {
   const func = props;
 

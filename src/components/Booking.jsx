@@ -8,7 +8,6 @@ import axios from "axios";
 import {
   faTrash,
   faSave,
-  faMoneyBill,
   faWalking, 
   faEnvelope,
   faPhoneAlt,
@@ -39,8 +38,6 @@ function Booking(props) {
   const duration = Math.max(passdata.duration[0],passdata.duration[3]);
   
   const date=new Date(fromDate.getTime()+(duration * 24 * 60 * 60 * 1000));
-  
-  var noOfPassengers=0;
 
   //console.log(passdata.price);
 

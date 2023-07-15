@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faCalendar, faHeart, faCreditCard, faBell, faTrashAlt, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
-import RegistrationPage from "./Register";
+import { faUser, faCalendar, faHeart, faCreditCard } from "@fortawesome/free-solid-svg-icons";
 import ContactsPopup from "./Contacts";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JavaScript dependencies

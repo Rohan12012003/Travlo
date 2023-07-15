@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import SmallTab from "./SmallTabs";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import BookedTab from "./BookedTab";
 
 function Bookings() {
   const [bookings, setBookings] = useState([]);
-  const [selectedDate, setSelectedDate] = useState(null);
 
   useEffect(() => {
     // Fetch the bookings data from the backend
