@@ -33,7 +33,7 @@ function RegistrationPage(props) {
     }
 
     // Make the POST request to the server
-    axios.post('http://localhost:5000/Register', userDetails)
+    axios.post('/Register', userDetails)
       .then(response => {
         // Handle the response from the server
         console.log(response.data); // Example: Log the response data
