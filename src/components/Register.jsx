@@ -1,6 +1,4 @@
-import React, { useState, useRef } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 function RegistrationPage(props) {
@@ -9,11 +7,8 @@ function RegistrationPage(props) {
     email: '',
     password: '',
     confirmPassword: '',
-    profilePicture: null
   });
   const [termsAccepted, setTermsAccepted] = useState(false);
-
-  const fileInputRef = useRef(null);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -21,18 +16,6 @@ function RegistrationPage(props) {
     setUserDetails(prev => ({
       ...prev,
       [name]: value
-    }));
-  }
-
-  function handleProfilePictureClick() {
-    fileInputRef.current.click();
-  }
-
-  function handleProfilePictureChange(event) {
-    const file = event.target.files[0];
-    setUserDetails(prev => ({
-      ...prev,
-      profilePicture: file
     }));
   }
 
@@ -48,16 +31,9 @@ function RegistrationPage(props) {
       alert('Password and Confirm Password do not match!');
       return;
     }
-    console.log("in handle submit");
-    // Create a FormData object to send the form data
-    const formData = new FormData();
-    formData.append('username', userDetails.username);
-    formData.append('email', userDetails.email);
-    formData.append('password', userDetails.password);
-    //formData.append('profilePicture', userDetails.profilePicture);
 
     // Make the POST request to the server
-    axios.post('http://localhost:5000/Register', formData)
+    axios.post('http://localhost:5000/Register', userDetails)
       .then(response => {
         // Handle the response from the server
         console.log(response.data); // Example: Log the response data
@@ -71,7 +47,6 @@ function RegistrationPage(props) {
           email: '',
           password: '',
           confirmPassword: '',
-          profilePicture: null
         });
       })
       .catch(error => {
@@ -92,28 +67,6 @@ function RegistrationPage(props) {
     <div className='registration-page col'>
       <h2 className='registration-title'>Start Your Journey Here</h2>
       <form onSubmit={handleSubmit}>
-        <div className='profile-picture-area'>
-          <div className="profile-picture-preview" onClick={handleProfilePictureClick}>
-            {userDetails.profilePicture ? (
-              <img
-                src={URL.createObjectURL(userDetails.profilePicture)}
-                alt="ProfilePicture"
-                className="profile-picture"
-              />
-            ) : (
-              <FontAwesomeIcon icon={faUser} className="profile-picture-icon" />
-            )}
-          </div>
-          <div>
-            <input
-              type="file"
-              accept="image/*"
-              ref={fileInputRef}
-              onChange={handleProfilePictureChange}
-              style={{ display: 'none' }}
-            />
-          </div>
-        </div>
         <div>
           <label className='col-6 register-item'>Username:</label>
           <input

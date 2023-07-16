@@ -109,11 +109,7 @@ mongoose.connect(process.env.MONGO_URI, {
         const savedUser = await newUser.save();
         currentUserId = savedUser._id;
         console.log('User saved:', savedUser);
-        res.status(200).json({
-          _id: savedUser._id,
-          username: savedUser.username,
-          email: savedUser.email,
-        }); // Send the saved user ID, name, and email as the response
+        res.status(200).json(savedUser); // Send the saved user as the response
       } catch (error) {
         console.error('Error registering user:', error);
         res.status(500).json({ error: 'Internal server error' });
@@ -156,10 +152,12 @@ mongoose.connect(process.env.MONGO_URI, {
           res.status(500).json({ error: "Internal server error" });
         });
     });
+    
+    
 
     app.put('/wishlist', (req, res) => {
       const newItem = req.body.wishlist[0]; // Assuming a single item is sent in the wishlist array
-
+    
       // Assuming you have a User model and the user ID is stored in currentUserId
       User.findByIdAndUpdate(
         currentUserId,
@@ -177,7 +175,8 @@ mongoose.connect(process.env.MONGO_URI, {
           res.status(500).json({ error: 'Internal server error' });
         });
     });
-
+    
+    
     app.get("/bookings", (req, res) => {
       // Retrieve the bookings data from the database based on the user ID
       // Assuming you have a User model and the user ID is stored in currentUserId
@@ -194,10 +193,11 @@ mongoose.connect(process.env.MONGO_URI, {
           res.status(500).json({ error: "Internal server error" });
         });
     });
+    
 
     app.post('/booking', (req, res) => {
       const bookingData = req.body;
-
+    
       // Assuming you have a User model and the user ID is stored in currentUserId
       User.findByIdAndUpdate(
         currentUserId,
@@ -215,18 +215,20 @@ mongoose.connect(process.env.MONGO_URI, {
           res.status(500).json({ error: 'Internal server error' });
         });
     });
-
-    app.post('/logout', (req, res) => {
-      currentUserId = null;
+    
+    app.post('/logout',(req,res)=>{
+      currentUserId=null;
       res.status(200).json({ message: 'Logout successful' });
-    });
+    })
+
+
 
   })
   .catch((error) => {
     console.error('Error connecting to the database:', error);
   });
 
-const port = 5000 || process.env.PORT;
+const port = 5000||process.env.PORT;
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
 });
