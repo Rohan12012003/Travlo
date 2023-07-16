@@ -4,41 +4,34 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 
-mongoose.set('strictQuery',false);
+mongoose.set('strictQuery', false);
 
 const cors = require('cors');
-const multer = require('multer');
 app.use(express.json());
 app.use(cors());
-let currentUserId = null; 
-
-const upload = multer({
-  dest: 'uploads/' // Specify the destination directory for uploaded files
-});
-
+let currentUserId = null;
 
 //'mongodb://localhost:27017/travloDB'
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-  .then(() => { 
+  .then(() => {
     console.log('Connected to the yourDB-name database');
 
     const userSchema = new mongoose.Schema({
       username: String,
       email: String,
       password: String,
-      profilePicture: String,
       wishlist: [
         {
-          imageurl:String,
+          imageurl: String,
           tabHeading: String,
           Hotels: Number,
           flights: Number,
           cars: Number,
-          duration:String,
-          price:Number
+          duration: String,
+          price: Number
         }
       ],
       bookings: [
@@ -59,15 +52,15 @@ mongoose.connect(process.env.MONGO_URI, {
           district: String,
           state: String,
           paymentMethod: String,
-          totalPayment:Number,
+          totalPayment: Number,
           fromDate: Date,
           toDate: Date,
           request: String,
-          price:Number,
-          imageurl:String
+          price: Number,
+          imageurl: String
         }
       ]
-    });    
+    });
 
     userSchema.methods.comparePassword = function (password) {
       // Implement your password comparison logic here
@@ -82,10 +75,9 @@ mongoose.connect(process.env.MONGO_URI, {
       console.log("on homepage");
     });
 
-    app.post('/register', upload.single('profilePicture'), async (req, res) => {
+    app.post('/register', async (req, res) => {
       try {
-        const { username,email, password } = req.body;
-        const profilePicture = req.file;
+        const { username, email, password } = req.body;
 
         // Check if a user with the same email already exists
         const existingUser = await User.findOne({ email });
@@ -103,7 +95,7 @@ mongoose.connect(process.env.MONGO_URI, {
           // Authentication successful
           // You can perform any additional actions required for authenticated users here
           // For example, generate a token for session management or return user data
-          currentUserId=existingUser._id;
+          currentUserId = existingUser._id;
           return res.status(200).json({ message: 'Authentication successful' });
         }
 
@@ -112,13 +104,16 @@ mongoose.connect(process.env.MONGO_URI, {
           username,
           email,
           password,
-          profilePicture
         });
 
         const savedUser = await newUser.save();
-        currentUserId=savedUser._id;
+        currentUserId = savedUser._id;
         console.log('User saved:', savedUser);
-        res.status(200).json(savedUser); // Send the saved user as the response
+        res.status(200).json({
+          _id: savedUser._id,
+          username: savedUser.username,
+          email: savedUser.email,
+        }); // Send the saved user ID, name, and email as the response
       } catch (error) {
         console.error('Error registering user:', error);
         res.status(500).json({ error: 'Internal server error' });
@@ -161,12 +156,10 @@ mongoose.connect(process.env.MONGO_URI, {
           res.status(500).json({ error: "Internal server error" });
         });
     });
-    
-    
 
     app.put('/wishlist', (req, res) => {
       const newItem = req.body.wishlist[0]; // Assuming a single item is sent in the wishlist array
-    
+
       // Assuming you have a User model and the user ID is stored in currentUserId
       User.findByIdAndUpdate(
         currentUserId,
@@ -184,8 +177,7 @@ mongoose.connect(process.env.MONGO_URI, {
           res.status(500).json({ error: 'Internal server error' });
         });
     });
-    
-    
+
     app.get("/bookings", (req, res) => {
       // Retrieve the bookings data from the database based on the user ID
       // Assuming you have a User model and the user ID is stored in currentUserId
@@ -202,11 +194,10 @@ mongoose.connect(process.env.MONGO_URI, {
           res.status(500).json({ error: "Internal server error" });
         });
     });
-    
 
     app.post('/booking', (req, res) => {
       const bookingData = req.body;
-    
+
       // Assuming you have a User model and the user ID is stored in currentUserId
       User.findByIdAndUpdate(
         currentUserId,
@@ -224,20 +215,18 @@ mongoose.connect(process.env.MONGO_URI, {
           res.status(500).json({ error: 'Internal server error' });
         });
     });
-    
-    app.post('/logout',(req,res)=>{
-      currentUserId=null;
+
+    app.post('/logout', (req, res) => {
+      currentUserId = null;
       res.status(200).json({ message: 'Logout successful' });
-    })
-
-
+    });
 
   })
   .catch((error) => {
     console.error('Error connecting to the database:', error);
   });
 
-const port = 5000||process.env.PORT;
+const port = 5000 || process.env.PORT;
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
 });
