@@ -75,7 +75,7 @@ mongoose.connect(process.env.MONGO_URI, {
       console.log("on homepage");
     });
 
-    app.post('/register', async (req, res) => {
+    app.post('/Register', async (req, res) => {
       try {
         const { username, email, password } = req.body;
 
