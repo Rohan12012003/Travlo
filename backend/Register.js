@@ -68,7 +68,7 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/yourDB-name
     const User = mongoose.model('User', userSchema);
 
     // Function to handle user registration
-    app.post('/backend/register', async (req, res) => {
+    app.post('/Register', async (req, res) => {
       try {
         const { username, email, password } = req.body;
 
