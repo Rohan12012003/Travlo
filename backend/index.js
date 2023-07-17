@@ -75,7 +75,7 @@ mongoose.connect(process.env.MONGO_URI, {
       console.log("on homepage");
     });
 
-    app.post('/backend/Register', async (req, res) => {
+    app.post('/Register', async (req, res) => {
       try {
 
 
@@ -230,7 +230,7 @@ mongoose.connect(process.env.MONGO_URI, {
     console.error('Error connecting to the database:', error);
   });
 
-//const port = 5000||process.env.PORT;
-/*app.listen(port, () => {
+const port = 5000||process.env.PORT;
+app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
-});*/
+});
