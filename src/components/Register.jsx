@@ -35,8 +35,9 @@ function RegistrationPage(props) {
     }
 
     // Make the POST request to the server
-    axios.post('backend/Register', userDetails)
+    //axios.post('backend/Register', userDetails)
 
+    fetch("./netlify/functions/Register")
       .then(response => {
         // Handle the response from the server
         console.log(response.data); // Example: Log the response data
