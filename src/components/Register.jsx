@@ -20,6 +20,8 @@ function RegistrationPage(props) {
   }
 
   function handleSubmit(event) {
+
+    console.log("in handle submit function");
     event.preventDefault();
   
     if (!termsAccepted) {
@@ -34,6 +36,7 @@ function RegistrationPage(props) {
 
     // Make the POST request to the server
     axios.post('/backend/Register', userDetails)
+
       .then(response => {
         // Handle the response from the server
         console.log(response.data); // Example: Log the response data
