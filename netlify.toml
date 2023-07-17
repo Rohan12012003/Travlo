@@ -1,3 +1,16 @@
 [build]
-  functions = "backend"
+  command = "npm run build" # Replace with the build command for your frontend (if needed)
+  publish = "build" # Replace with the directory where your frontend build files are located
 
+[functions]
+  directory = "backend" # Replace with the directory where your Netlify functions are located
+
+[[redirects]]
+  from = "/api/*" # Replace with the prefix for your backend API endpoints in the frontend
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
