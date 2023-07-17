@@ -3,7 +3,7 @@
   publish = "build" # Replace with the directory where your frontend build files are located
 
 [functions]
-  directory = "functions" # Replace with the directory where your Netlify functions are located
+  directory = "backend" # Replace with the directory where your Netlify functions are located
 
 [[redirects]]
   from = "/api/*" # Replace with the prefix for your backend API endpoints in the frontend
