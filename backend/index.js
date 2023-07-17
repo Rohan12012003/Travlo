@@ -77,6 +77,8 @@ mongoose.connect(process.env.MONGO_URI, {
 
     app.post('/backend/Register', async (req, res) => {
       try {
+
+
         const { username, email, password } = req.body;
 
         // Check if a user with the same email already exists
@@ -228,7 +230,7 @@ mongoose.connect(process.env.MONGO_URI, {
     console.error('Error connecting to the database:', error);
   });
 
-const port = 5000||process.env.PORT;
-app.listen(port, () => {
+//const port = 5000||process.env.PORT;
+/*app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
-});
+});*/
