@@ -35,7 +35,7 @@ function RegistrationPage(props) {
     }
 
     // Make the POST request to the server
-    axios.post('https://travlowebsite.netlify.app/backend/Register', userDetails)
+    axios.post('backend/Register', userDetails)
 
       .then(response => {
         // Handle the response from the server
