@@ -82,7 +82,7 @@ function App() {
         <Route path="/Booking" element={<Booking />} />
         {(
           <Route
-            path="/backend/Register"
+            path="/Register"
             element={<Register onRegistration={handleRegistration} />}
           />
         )}
