@@ -35,7 +35,7 @@ function RegistrationPage(props) {
     }
 
     // Make the POST request to the server
-    axios.post('api/Register', userDetails)
+    axios.post('/Register', userDetails)
 
       .then(response => {
         // Handle the response from the server

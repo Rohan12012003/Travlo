@@ -106,12 +106,6 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/yourDB-name
         res.status(500).json({ error: 'Internal server error' });
       }
     });
-
-    // Start the server
-    /*const port = process.env.PORT || 5000;
-    app.listen(port, () => {
-      console.log(`Server is listening on port ${port}`);
-    });*/
   })
   .catch((error) => {
     console.error('Error connecting to the database:', error);
