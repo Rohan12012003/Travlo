@@ -36,10 +36,18 @@ function RegistrationPage(props) {
 
     // Make the POST request to the server
    // axios.post('./.netlify/functions/Register', userDetails)
-
+  
+  // Request options
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json", // Set the Content-Type header for JSON data
+    },
+    body: JSON.stringify(userDetails), // Convert the data object to JSON and set it as the request body
+  };
       
 
-     fetch("/.netlify/functions/Register")
+     fetch("/.netlify/functions/Register",options)
       .then(response => {
         // Handle the response from the server
         console.log(response.data); // Example: Log the response data
