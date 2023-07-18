@@ -46,7 +46,7 @@ function RegistrationPage(props) {
     body: JSON.stringify(userDetails), // Convert the data object to JSON and set it as the request body
   };
       //http://localhost:5000/Register
-
+      //./../.netlify/functions/Register
      fetch("./../.netlify/functions/Register",options)
       .then(response => {
         // Handle the response from the server
