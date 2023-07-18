@@ -57,7 +57,7 @@ const handler = async (event) => {
       const currentUserId = existingUser._id;
       return {
         statusCode: 200,
-        body: JSON.stringify({ message: 'Authentication successful' }),
+        body: JSON.stringify({ message: 'Authentication successful'}),
       };
     }
 
