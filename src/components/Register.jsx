@@ -47,7 +47,7 @@ function RegistrationPage(props) {
   };
       //http://localhost:5000/Register
 
-     fetch("../../.netlify/functions/Register",options)
+     fetch("../../.netlify/functions/Register.js",options)
       .then(response => {
         // Handle the response from the server
         console.log(response.data); // Example: Log the response data
