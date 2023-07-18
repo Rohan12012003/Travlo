@@ -44,10 +44,10 @@ function RegistrationPage(props) {
     fetch("/.netlify/functions/Register", options)
       .then(response => response.json()) // Parse the response body as JSON
       .then(data => {
-        console.log(data); // Example: Log the response data
+        console.log(data.user._id); // Example: Log the response data
 
         // Perform any necessary actions after successful registration
-        props.onRegistration();
+        props.onRegistration(data.user._id);
         console.log("after");
 
         // Reset the form after successful registration
