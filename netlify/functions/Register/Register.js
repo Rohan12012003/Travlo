@@ -1,14 +1,7 @@
-exports.handler = async function (event, context) {
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: "Hello World" }),
-  };
-};
-
 const { MongoClient, ServerApiVersion } = require('mongodb');
 require('dotenv').config();
 
-const handler = async (event) => {
+exports.handler = async function (event, context) {
   // MongoDB connection setup
   console.log('Trying to connect');
   const mongoClient = new MongoClient(process.env.MONGO_URI, {
@@ -87,5 +80,3 @@ const handler = async (event) => {
     console.log('MongoDB connection closed.');
   }
 };
-
-//module.exports = handler;
