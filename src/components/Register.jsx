@@ -50,7 +50,7 @@ function RegistrationPage(props) {
      fetch("/.netlify/functions/Register",options)
       .then(response => {
         // Handle the response from the server
-        console.log(response.message); // Example: Log the response data
+        console.log(response.body); // Example: Log the response data
         // Perform any necessary actions after successful registration
         //localStorage.setItem('isRegistered', JSON.stringify(response.data.isRegistered));
         props.onRegistration();
