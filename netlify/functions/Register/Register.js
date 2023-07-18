@@ -1,3 +1,10 @@
+exports.handler = async function (event, context) {
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: "Hello World" }),
+  };
+};
+
 const { MongoClient, ServerApiVersion } = require('mongodb');
 require('dotenv').config();
 
@@ -81,4 +88,4 @@ const handler = async (event) => {
   }
 };
 
-module.exports = handler;
+//module.exports = handler;
