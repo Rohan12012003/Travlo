@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-//import axios from 'axios';
 
 function RegistrationPage(props) {
   const [userDetails, setUserDetails] = useState({
@@ -20,7 +19,6 @@ function RegistrationPage(props) {
   }
 
   function handleSubmit(event) {
-
     console.log("in handle submit function");
     event.preventDefault();
   
@@ -35,26 +33,23 @@ function RegistrationPage(props) {
     }
 
     // Make the POST request to the server
-   // axios.post('./.netlify/functions/Register', userDetails)
-  
-  // Request options
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json", // Set the Content-Type header for JSON data
-    },
-    body: JSON.stringify(userDetails), // Convert the data object to JSON and set it as the request body
-  };
-      
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userDetails),
+    };
 
-     fetch("/.netlify/functions/Register",options)
-      .then(response => {
-        // Handle the response from the server
-        console.log(response.user); // Example: Log the response data
+    fetch("/.netlify/functions/Register", options)
+      .then(response => response.json()) // Parse the response body as JSON
+      .then(data => {
+        console.log(data.user); // Example: Log the response data
+
         // Perform any necessary actions after successful registration
-        //localStorage.setItem('isRegistered', JSON.stringify(response.data.isRegistered));
         props.onRegistration();
         console.log("after");
+
         // Reset the form after successful registration
         setUserDetails({
           username: '',
