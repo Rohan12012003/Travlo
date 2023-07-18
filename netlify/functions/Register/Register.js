@@ -57,7 +57,7 @@ const handler = async (event) => {
       const currentUserId = existingUser._id;
       return {
         statusCode: 200,
-        body: JSON.stringify({ message: 'Authentication successful'}),
+        body: JSON.stringify({ message: 'Authentication successful', user: existingUser }),
       };
     }
 
@@ -73,7 +73,7 @@ const handler = async (event) => {
     console.log('User saved:', savedUser);
     return {
       statusCode: 200,
-      body: JSON.stringify(savedUser), // Send the saved user as the response
+      body: JSON.stringify({ message: 'User registered successfully', user: savedUser }),
     };
   } catch (error) {
     console.error('Error registering user:', error);
