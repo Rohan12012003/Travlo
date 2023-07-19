@@ -31,6 +31,7 @@ export default function ContactsPopup() {
       subject: '',
       query: ''
     }); 
+    close();
   };
 
   return (
