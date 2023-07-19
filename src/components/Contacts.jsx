@@ -12,6 +12,7 @@ export default function ContactsPopup() {
     subject: "",
     query: ""
   });
+  const [isPopupOpen, setPopupOpen] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -31,7 +32,7 @@ export default function ContactsPopup() {
       subject: '',
       query: ''
     }); 
-    close();
+    setPopupOpen(false);
   };
 
   return (
@@ -41,6 +42,7 @@ export default function ContactsPopup() {
       arrow={true}
       modal
       closeOnDocumentClick
+      onClose={() => setPopupOpen(false)}
     >
       {close => (
         <div className="contact-popup">
