@@ -40,6 +40,7 @@ function Booking(props) {
   const date=new Date(fromDate.getTime()+(duration * 24 * 60 * 60 * 1000));
 
   const currentUserId = localStorage.getItem('currentUserId');
+  console.log(currentUserId);
 
   //console.log(passdata.price);
 
