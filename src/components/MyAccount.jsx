@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 function MyAccount() {
   const [userData, setUserData] = useState(null);
   const currentUserId = localStorage.getItem('currentUserId');
+  console.log(currentUserId);
   useEffect(() => {
     // Fetch the user data from the backend using the user ID
     const options = {

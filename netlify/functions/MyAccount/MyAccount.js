@@ -25,6 +25,7 @@ exports.handler = async function (event, context) {
     }
 
     const { userId } = JSON.parse(event.body);
+    console.log(userId);
 
     // Check if a user with the same email already exists
     const database = mongoClient.db(process.env.MONGODB_DATABASE);
