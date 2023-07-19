@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const date = new Date().getFullYear();
-
+ 
 function Footer() {
   return (
     <footer className="footer">
