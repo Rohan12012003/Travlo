@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+//import axios from "axios";
 import SmallTab from "./SmallTabs";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -19,7 +19,7 @@ function WishList() {
     };
   
     // Fetch the wishlist data from the backend
-    axios.get("/.netlify/functions/Wishlist")
+    fetch("/.netlify/functions/Wishlist",options)
       .then((response) => {
         setWishlist(response.data);
         //console.log(response.data)
