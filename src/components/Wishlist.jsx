@@ -19,15 +19,15 @@ function WishList() {
     };
   
     // Fetch the wishlist data from the backend
-    fetch("/.netlify/functions/Wishlist",options)
-      .then((response) => {
-        setWishlist(response.data);
-        //console.log(response.data)
-      })
-      .catch((error) => {
-        console.error("Error fetching wishlist data:", error);
-      });
-  }, [currentUserId]);
+    fetch("/.netlify/functions/Wishlist", options)
+    .then((response) => response.json()) // Parse the response JSON
+    .then((data) => {
+      setWishlist(data); // Update wishlist state with the parsed data
+    })
+    .catch((error) => {
+      console.error("Error fetching wishlist data:", error);
+    });
+}, [currentUserId]);
 
   if (!Array.isArray(wishlist)) {
     return <p>Loading wishlist...</p>;
