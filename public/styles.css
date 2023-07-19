@@ -915,6 +915,7 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall-d
   .header-logo-text{
     font-size: 35px;
     margin-left: 10px;
+    margin-right: 5px;
   }
 
   .header-link-text{
@@ -923,6 +924,10 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall-d
     margin: 0px;
     padding: 0px;
     margin-top: 5px;
+  }
+
+  .register-text{
+    margin-top:5px;
   }
 
   .user{
