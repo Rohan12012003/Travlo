@@ -101,7 +101,8 @@ function SmallTab(props) {
   const rating=getRandomNumber();
 
   const handleBooking = () => {
-    if (!props.isRegistered || !currentUserId) {
+    console.log("in the handle bokking ",props.isRegistered);
+    if (!props.isRegistered) {
       // Show alert if user is not logged in
       console.log(props.user);
       alert('Please log in first');
