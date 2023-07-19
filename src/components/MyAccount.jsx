@@ -1,13 +1,20 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+//import axios from "axios";
 import { Link } from "react-router-dom";
 function MyAccount() {
   const [userData, setUserData] = useState(null);
-
+  const currentUserId = localStorage.getItem('currentUserId');
   useEffect(() => {
-    // Fetch the user data from the backend
-    axios
-      .get("http://localhost:5000/MyAccount")
+    // Fetch the user data from the backend using the user ID
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(currentUserId),
+    };
+
+    fetch("/.netlify/functions/MyAccount", options)
       .then((response) => {
         const data = response.data;
         console.log(data);
@@ -18,7 +25,8 @@ function MyAccount() {
         console.error("Error fetching user data:", error);
         // Handle the error in your frontend code
       });
-  }, []);
+  }, [currentUserId]); // Add currentUserId as a dependency to re-fetch the data when it changes
+
 
   // Render the user data in the component
   return (
