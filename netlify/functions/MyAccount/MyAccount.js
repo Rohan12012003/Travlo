@@ -30,7 +30,9 @@ exports.handler = async function (event, context) {
     // Check if a user with the same email already exists
     const database = mongoClient.db(process.env.MONGODB_DATABASE);
     const collection = database.collection(process.env.MONGODB_COLLECTION);
-    const user = await collection.findOne({ _id: userId });
+    const objectIdUserId = new ObjectId(userId);
+
+    const user = await collection.findOne({ _id: objectIdUserId });
 
     console.log(user);
 
