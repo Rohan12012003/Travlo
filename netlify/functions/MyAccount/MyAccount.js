@@ -32,6 +32,8 @@ exports.handler = async function (event, context) {
     const collection = database.collection(process.env.MONGODB_COLLECTION);
     const user = await collection.findOne({ _id: userId });
 
+    console.log(user);
+
     if (!user) {
       return {
         statusCode: 404,
