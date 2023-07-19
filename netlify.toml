@@ -23,3 +23,7 @@ path = "/Register"
 [[edge_functions]]
 function = "MyAccount"
 path = "/MyAccount"
+
+[[edge_functions]]
+function = "Wishlist"
+path = "/Wishlist"
