@@ -17,7 +17,7 @@ exports.handler = async function (event, context) {
     await mongoClient.connect();
     console.log('Connected to the database');
 
-    if (event.httpMethod !== 'PUT') { // Change the HTTP method to PUT
+    if (event.httpMethod !== 'POST') { // Change the HTTP method to PUT
       return {
         statusCode: 404,
         body: JSON.stringify({ error: 'Not Found' }),
