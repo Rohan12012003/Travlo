@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-//import axios from "axios";
 import { Link } from "react-router-dom";
+
 function MyAccount() {
   const [userData, setUserData] = useState(null);
   const currentUserId = localStorage.getItem('currentUserId');
@@ -16,8 +16,8 @@ function MyAccount() {
     };
 
     fetch("/.netlify/functions/MyAccount", options)
-      .then((response) => {
-        const data = response.data;
+      .then((response) => response.json()) // Parse the response as JSON
+      .then((data) => {
         console.log(data);
         // Set the user data in the state
         setUserData(data);
@@ -27,7 +27,6 @@ function MyAccount() {
         // Handle the error in your frontend code
       });
   }, [currentUserId]); // Add currentUserId as a dependency to re-fetch the data when it changes
-
 
   // Render the user data in the component
   return (
