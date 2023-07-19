@@ -20,7 +20,6 @@ export default function ContactsPopup() {
       ...prevData,
       [name]: value
     }));
-    console.log(data);
   };
 
   const handleSubmit = (e) => {
@@ -35,65 +34,77 @@ export default function ContactsPopup() {
     setPopupOpen(false);
   };
 
+  // Open the popup when the "Contact" link is clicked
+  const openPopup = () => {
+    setPopupOpen(true);
+  };
+
   return (
-    <Popup
-      trigger={<h2 className='header-link-text'>Contact</h2>}
-      position="bottom center"
-      arrow={true}
-      modal
-      closeOnDocumentClick
-      onClose={() => setPopupOpen(false)}
-    >
-      {close => (
-        <div className="contact-popup">
-          <button className="close-button btn" onClick={close}>
-            <FontAwesomeIcon icon={faTimes} />
-          </button>
-          <div className="contact-popup-content">
-            <h3>Contact Information</h3>
-            <p>
-              <FontAwesomeIcon icon={faPhoneAlt} /> Phone: +1 (123) 456-7890
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faEnvelope} /> Email: info@example.com
-            </p>
-            <form className='contact-popup-form' onSubmit={handleSubmit}>
-              <input
-                className="col-10 popup-text"
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={data.name}
-                onChange={handleChange}
-              />
-              <input
-                className="col-10 popup-text"
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={data.email}
-                onChange={handleChange}
-              />
-              <input
-                className="col-10 popup-text"
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                value={data.subject}
-                onChange={handleChange}
-              />
-              <textarea
-                className="col-10 popup-text"
-                name="query"
-                placeholder="Your Message"
-                value={data.query}
-                onChange={handleChange}
-              ></textarea>
-              <button className="btn btn-info btn-sm" type="submit">Send Message</button>
-            </form>
-          </div>
-        </div>
+    <>
+      {/* Render the "Contact" link outside the Popup component */}
+      <h2 className='header-link-text' onClick={openPopup}>Contact</h2>
+
+      {/* Render the Popup conditionally based on the isPopupOpen state */}
+      {isPopupOpen && (
+        <Popup
+          position="bottom center"
+          arrow={true}
+          modal
+          closeOnDocumentClick
+          onClose={() => setPopupOpen(false)}
+        >
+          {close => (
+            <div className="contact-popup">
+              <button className="close-button btn" onClick={close}>
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
+              <div className="contact-popup-content">
+                <h3>Contact Information</h3>
+                <p>
+                  <FontAwesomeIcon icon={faPhoneAlt} /> Phone: +1 (123) 456-7890
+                </p>
+                <p>
+                  <FontAwesomeIcon icon={faEnvelope} /> Email: info@example.com
+                </p>
+                <form className='contact-popup-form' onSubmit={handleSubmit}>
+                  <input
+                    className="col-10 popup-text"
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={data.name}
+                    onChange={handleChange}
+                  />
+                  <input
+                    className="col-10 popup-text"
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    value={data.email}
+                    onChange={handleChange}
+                  />
+                  <input
+                    className="col-10 popup-text"
+                    type="text"
+                    name="subject"
+                    placeholder="Subject"
+                    value={data.subject}
+                    onChange={handleChange}
+                  />
+                  <textarea
+                    className="col-10 popup-text"
+                    name="query"
+                    placeholder="Your Message"
+                    value={data.query}
+                    onChange={handleChange}
+                  ></textarea>
+                  <button className="btn btn-info btn-sm" type="submit">Send Message</button>
+                </form>
+              </div>
+            </div>
+          )}
+        </Popup>
       )}
-    </Popup>
+    </>
   );
 }
