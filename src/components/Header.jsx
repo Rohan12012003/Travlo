@@ -42,23 +42,23 @@ function Header(props) {
               <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                 <Link to="/MyAccount">
                   <li className="user-list-item my-account">
-                    <p className='user-dropdown-items'><FontAwesomeIcon icon={faUser} /> My Account</p>
+                    <p className='user-dropdown-items' style={{color:"#0000FF",textDecoration:"none"}}><FontAwesomeIcon icon={faUser} /> My Account</p>
                   </li>
                 </Link>
                 <div className="dropdown-divider"></div>
                 <Link to="/Bookings">
                   <li className="user-list-item">
-                    <p className='user-dropdown-items'><FontAwesomeIcon icon={faCalendar} /> Bookings</p>
+                    <p className='user-dropdown-items' style={{color:"#0000FF",textDecoration:"none"}}><FontAwesomeIcon icon={faCalendar} /> Bookings</p>
                   </li>
                 </Link>
                 <Link to="/WishList">
                   <li className="user-list-item">
-                    <p className='user-dropdown-items'><FontAwesomeIcon icon={faHeart} /> Wishlist</p>
+                    <p className='user-dropdown-items' style={{color:"#0000FF",textDecoration:"none"}}><FontAwesomeIcon icon={faHeart} /> Wishlist</p>
                   </li>
                 </Link>
                 <Link to="/PaymentMethods">
                 <li className="user-list-item">
-                  <p className='user-dropdown-items'><FontAwesomeIcon icon={faCreditCard} /> Payment History</p>
+                  <p className='user-dropdown-items' style={{color:"#0000FF",textDecoration:"none"}}><FontAwesomeIcon icon={faCreditCard} /> Payment History</p>
                 </li>
                 </Link>
                 <li>
