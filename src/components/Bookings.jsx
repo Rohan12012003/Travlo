@@ -20,7 +20,7 @@ function Bookings() {
     };
   
     // Fetch the wishlist data from the backend
-    fetch("/.netlify/functions/Bo0kings", options)
+    fetch("/.netlify/functions/Bookings", options)
     .then((response) => response.json()) // Parse the response JSON
     .then((data) => {
       setBookings(data); // Update wishlist state with the parsed data
