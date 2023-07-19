@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JavaScript dependencies
 import NotificationsItem from "./Notification";
 import LogoutPopup from "./LogoutPopup";
-import logo from "../components/logo2.png"; 
+//import logo from "../components/logo2.png"; 
 function Header(props) {
   const isRegistered = props.isRegistered;
   console.log(isRegistered);
@@ -16,7 +16,6 @@ function Header(props) {
     <div>
       <header className="header">
         <div className="header-left-4">
-        <img src={logo} alt="Travlo Logo"  style={{ width: "50px", height: "50px" }}/>
         </div>
         <div className="header-text col-6">
           <h5 className="Typography-root header-logo-text">Travlo</h5>
