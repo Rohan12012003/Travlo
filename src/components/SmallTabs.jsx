@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faHotel, faPlane, faCar } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
+//import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Rating from "react-rating";
 function SmallTab(props) {
@@ -46,12 +46,35 @@ function SmallTab(props) {
       const updatedUser = { wishlist: [...props.user, data] };
 
       try {
-        // Send the updated wishlist data to the server
-        await axios.put('http://localhost:5000/wishlist', { wishlist: updatedUser.wishlist });
+
+        const options = {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ wishlist: updatedUser.wishlist }),
+        };
+        
+        // Send the updated wishlist data to the server using fetch
+        fetch('/.netlify/functions/WishlistPut', options)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Failed to update wishlist');
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => {
+            console.error('Error updating wishlist:', error);
+          });
+
       } catch (error) {
         console.error('Error updating wishlist:', error);
       }
-    } else {
+    } 
+    /*else {
       // Remove the item from the wishlist
       const updatedWishlist = props.user.filter((item) => item.tabHeading !== data.tabHeading);
 
@@ -61,7 +84,7 @@ function SmallTab(props) {
       } catch (error) {
         console.error('Error updating wishlist:', error);
       }
-    }
+    }*/
   };
 
   useEffect(() => {
