@@ -87,7 +87,7 @@ function App() {
           />
         )}
         <Route path="/MyAccount" element={<MyAccount />} />
-        <Route path="/WishList" element={<WishList />} />
+        <Route path="/WishList" element={<WishList isRegistered={isRegistered}/>} />
         <Route path="/Bookings" element={<Bookings />} />
         <Route path="/PaymentMethods" element={<PaymentMethods />} />
         <Route path="/Wedding" element={<PaymentMethods />} />
