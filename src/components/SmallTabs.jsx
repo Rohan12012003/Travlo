@@ -45,7 +45,7 @@ function SmallTab(props) {
 
     if (!isClicked) {
       // Add the item to the wishlist
-      const updatedUser = { wishlist: [...props.user, data] };
+      //const updatedUser = { wishlist: [...props.user, data] };
 
       try {
 
@@ -54,7 +54,7 @@ function SmallTab(props) {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ wishlist: updatedUser.wishlist, userId: currentUserId }),
+          body: JSON.stringify({ wishlistItem: data, userId: currentUserId }),
         };
         
         // Send the updated wishlist data to the server using fetch
