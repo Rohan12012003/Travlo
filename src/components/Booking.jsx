@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLocation } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import axios from "axios";
+//import axios from "axios";
 import {
   faTrash,
   faSave,
@@ -99,12 +99,21 @@ function Booking(props) {
 
       //console.log(data.toDate)
 
-    axios
-        .post("http://localhost:5000/booking", data)
-        .then((response) => {
-          // Handle the response from the backend if needed
-          console.log("Data saved successfully:", response.data);
-        })
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userId: currentUserId ,bookingData:data}),
+      };
+    
+      // Fetch the wishlist data from the backend
+      fetch("/.netlify/functions/Booking", options)
+      .then((response) => response.json()) // Parse the response JSON
+      .then((datas) => {
+        //setWishlist(data); // Update wishlist state with the parsed data
+        console.log(datas);
+      })
         .catch((error) => {
           console.error("Error saving data:", error);
         });
