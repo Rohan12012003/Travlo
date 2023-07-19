@@ -4,7 +4,7 @@ import SmallTab from "./SmallTabs";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-function WishList() {
+function WishList(props) {
   const [wishlist, setWishlist] = useState([]);
   const currentUserId = localStorage.getItem('currentUserId');
   console.log(currentUserId);
@@ -49,6 +49,7 @@ function WishList() {
             imageurl={item.imageurl}
             wishlist={wishlist}
             setUser={setWishlist}
+            isRegistered={props.isRegistered}
           />
         ))}
       </div>
