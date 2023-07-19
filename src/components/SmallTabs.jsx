@@ -10,6 +10,8 @@ function SmallTab(props) {
   const transparentBackground = 'https://www.transparenttextures.com/patterns/shattered-dark.png';
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const currentUserId = localStorage.getItem('currentUserId');
+  console.log(currentUserId);
  // const [backgroundColor, setBackgroundColor] = useState('');
   const navigate = useNavigate();
   const data = {
@@ -52,7 +54,7 @@ function SmallTab(props) {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ wishlist: updatedUser.wishlist }),
+          body: JSON.stringify({ wishlist: updatedUser.wishlist, userId: currentUserId }),
         };
         
         // Send the updated wishlist data to the server using fetch
