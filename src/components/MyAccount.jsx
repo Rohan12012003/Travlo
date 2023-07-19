@@ -11,7 +11,7 @@ function MyAccount() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(currentUserId),
+      body: JSON.stringify({ userId: currentUserId }),
     };
 
     fetch("/.netlify/functions/MyAccount", options)
