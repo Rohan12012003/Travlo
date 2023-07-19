@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import Popup from 'reactjs-popup';
-import axios from "axios";
+//import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 function LogoutPopup(props) {
 
@@ -22,7 +22,8 @@ function LogoutPopup(props) {
 
     try {
       // Send a request to the backend to clear the user session
-      await axios.post('http://localhost:5000/logout');
+      //await axios.post('http://localhost:5000/logout');
+      localStorage.removeItem('currentUserId');
       navigate('/');
     } catch (error) {
       console.error('Error logging out:', error);
