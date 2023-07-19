@@ -16,7 +16,7 @@ function Header(props) {
     <div>
       <header className="header">
         <div className="header-left-4">
-        <img src={logo2} alt="Travlo Logo" />
+        <img src={logo2} alt="Travlo Logo"  style={{ width: "50px", height: "50px" }}/>
         </div>
         <div className="header-text col-6">
           <h5 className="Typography-root header-logo-text">Travlo</h5>
