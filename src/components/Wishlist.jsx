@@ -6,10 +6,20 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 function WishList() {
   const [wishlist, setWishlist] = useState([]);
-
+  const currentUserId = localStorage.getItem('currentUserId');
+  console.log(currentUserId);
   useEffect(() => {
+    // Fetch the user data from the backend using the user ID
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userId: currentUserId }),
+    };
+  
     // Fetch the wishlist data from the backend
-    axios.get("http://localhost:5000/wishlist")
+    axios.get("/.netlify/functions/Wishlist")
       .then((response) => {
         setWishlist(response.data);
         //console.log(response.data)
@@ -17,7 +27,7 @@ function WishList() {
       .catch((error) => {
         console.error("Error fetching wishlist data:", error);
       });
-  }, []);
+  }, [currentUserId]);
 
   if (!Array.isArray(wishlist)) {
     return <p>Loading wishlist...</p>;
