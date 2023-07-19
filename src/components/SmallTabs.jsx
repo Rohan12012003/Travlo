@@ -76,17 +76,6 @@ function SmallTab(props) {
         console.error('Error updating wishlist:', error);
       }
     } 
-    /*else {
-      // Remove the item from the wishlist
-      const updatedWishlist = props.user.filter((item) => item.tabHeading !== data.tabHeading);
-
-      try {
-        // Send the updated wishlist data to the server
-        await axios.put('/wishlist', { wishlist: updatedWishlist });
-      } catch (error) {
-        console.error('Error updating wishlist:', error);
-      }
-    }*/
   };
 
   useEffect(() => {
@@ -112,7 +101,7 @@ function SmallTab(props) {
   const rating=getRandomNumber();
 
   const handleBooking = () => {
-    if (!props.isRegistered) {
+    if (!props.isRegistered || !currentUserId) {
       // Show alert if user is not logged in
       console.log(props.user);
       alert('Please log in first');
