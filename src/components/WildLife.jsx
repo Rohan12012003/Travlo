@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 
 function WildLife(props) {
   //const [user, setUser] = useState({ wishlist: [] });
+  console.log(props.isRegistered);
   const [wishlist, setWishlist] = useState([]);
   const location = useLocation();
   const smallTabsData = [
