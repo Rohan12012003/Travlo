@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+//import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -7,18 +7,28 @@ import BookedTab from "./BookedTab";
 
 function Bookings() {
   const [bookings, setBookings] = useState([]);
+  const currentUserId = localStorage.getItem('currentUserId');
 
   useEffect(() => {
-    // Fetch the bookings data from the backend
-    axios.get("http://localhost:5000/bookings")
-      .then((response) => {
-        setBookings(response.data);
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching bookings data:", error);
-      });
-  }, []);
+    // Fetch the user data from the backend using the user ID
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userId: currentUserId }),
+    };
+  
+    // Fetch the wishlist data from the backend
+    fetch("/.netlify/functions/Bo0kings", options)
+    .then((response) => response.json()) // Parse the response JSON
+    .then((data) => {
+      setBookings(data); // Update wishlist state with the parsed data
+    })
+    .catch((error) => {
+      console.error("Error fetching wishlist data:", error);
+    });
+}, [currentUserId]);
 
   return (
     <div className="bookings-page">
