@@ -19,3 +19,7 @@
 [[edge_functions]]
 function = "Register"
 path = "/Register"
+
+[[edge_functions]]
+function = "MyAccount"
+path = "/MyAccount"
