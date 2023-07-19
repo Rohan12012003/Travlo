@@ -49,6 +49,19 @@ function App() {
     };
   }, []);
 
+  function logoutUser() {
+    // You can add your logout logic here, e.g., clearing tokens, redirecting to logout page, etc.
+    // For demonstration purposes, we will simply display an alert.
+    localStorage.removeItem('currentUserId');
+    localStorage.removeItem('isRegistered');
+    alert('You have been logged out.');
+  }
+
+  window.addEventListener('beforeunload', function(event) {
+    // Perform the logout action
+    logoutUser();
+  });
+
   // Callback function to update isRegistered state after successful registration
   const handleRegistration = (userId) => {
     setIsRegistered(true);
